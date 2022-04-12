@@ -1,38 +1,273 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  max-height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.topbar {
+  position: sticky;
+  width: 100%;
+  top: 0%;
+  font-size: 1.10rem;
+  display: flex;
+  align-items: center;
+  color: #000101;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 5%), inset 0 -1px 0 rgb(0 0 0 / 15%);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.topbar>.top-bar {
+
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-list {
+  margin-right: 1rem;
+}
+
+.nav-list>a {
+  text-decoration: none;
+}
+
+.nav-list:nth-child(2) {
+  position: absolute;
+  right: 10%;
+}
+
+.nav-list:nth-child(3) {
+  position: absolute;
+  right: 5%;
+}
+
+.nav-list:nth-child(4) {
+  position: absolute;
+  right: 15%;
+}
+
+.nav-list>a {
+  color: #000;
+  text-decoration: none;
+}
+
+.col {
+  float: left;
+  width: 33.33%;
+  margin-top: 1rem;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.card {
+  width: 18rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 6%);
+  cursor: default;
+}
+
+.card>img {
+  width: 100%;
+}
+
+.card-tittle {
+  margin-bottom: 0.1rem;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+
+.container {
+  margin-left: 5rem;
+  margin-right: 5rem;
 }
 
-@keyframes App-logo-spin {
+.card-body {
+  width: 100%;
+  margin: 0.0125rem;
+  color: #616161;
+  display: flex;
+  justify-content: space-around;
+  font-size: 1rem;
+  font-style: 400;
+}
+
+select {
+  padding: 0.2rem;
+}
+
+.card-footer {
+  width: 100%;
+  margin: 0.0125rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+
+
+
+.btn-foot>button {
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  padding: 0.375rem 0.75rem;
+  margin-top: 1rem;
+  border-radius: 1.563rem;
+  color: #e70;
+  border: 1px solid #e70;
+  background-color: #fff;
+  cursor: pointer;
+
+}
+
+
+.btn-foot>button:hover {
+  background-color: #e70;
+  color: #000;
+}
+
+.modal {
+  position: absolute;
+  left: 0%;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  border: 0;
+  height: 100%;
+  background-color: rgb(0 0 0 / .3)
+}
+
+.modal-content {
+  position: absolute;
+  left: 40%;
+  background: #fff;
+  padding: 1em;
+  width: 50ch;
+  border: 0;
+  box-shadow: 0 0 1em rgb(0 0 0 / .3);
+  animation: anime .5s ease-in-out 0;
+}
+
+@keyframes anime {
   from {
-    transform: rotate(0deg);
+    transform: scale(0);
   }
+
   to {
-    transform: rotate(360deg);
+    transform: scale(1);
   }
+}
+
+
+
+
+.modal-content>p {
+  cursor: pointer;
+
+}
+
+
+dialog::backdrop {
+  background: #000101;
+}
+
+
+
+img {
+  width: 100%;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  color: #ff0000;
+  cursor: pointer;
+  border: 1px solid #000;
+}
+
+.varient>h4 {
+  margin-bottom: 0%;
+}
+
+.quantity>h4 {
+  margin-bottom: 0%;
+}
+
+.list-group {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 0.500rem;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid #000;
+
+}
+
+.list-group-content {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 0.500rem;
+  padding-bottom: 0.500rem;
+
+}
+
+.list-group-content::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 1px;
+  background: #000;
+  left: 0%;
+  bottom: 0%;
+}
+
+.list-item {
+  margin-left: 0.500rem;
+  margin-right: auto;
+}
+
+
+
+.bold {
+  font-weight: 600;
+}
+
+.rounded-pill {
+  display: inline-block;
+  padding: 0.35em 0.65em;
+  font-size: .75em;
+  font-weight: bolder;
+  color: #fff;
+  display: flex;
+  line-height: 1;
+  align-items: center;
+  vertical-align: baseline;
+  justify-content: center;
+  border: 1px solid #000;
+  white-space: nowrap;
+  background-color: #36a9ae;
+  border-radius: 50rem;
 }
